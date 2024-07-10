@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "리드리드",
+  "description": "읽어보자",
+  "version": "1.0",
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'",
+    "sandbox": "sandbox allow-scripts allow-forms",
+    "script-src": [
+      "'self'",
+      "https://translate.google.com",
+      "https://translate.googleapis.com"
+    ]
+  }
+}
